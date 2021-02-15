@@ -41,8 +41,7 @@ export class Home extends Component {
   }
 
   async populateSongsData() {
-    const response = await fetch('songs/all');
-    console.log(response);
+    const response = await fetch('songs');
     const data = await response.json();
     this.setState({ songs: data, loading: false });
   }
