@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Rockstar.Models;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace Rockstar.Controllers
 {
@@ -21,25 +22,33 @@ namespace Rockstar.Controllers
             _logger = logger;
         }
 
-        //[HttpGet]
-        //public SongViewModel Get(int id)
-        //{
-        //    return Songs.First(x => x.Id == id);
-        //}
+        [HttpGet]
+        public async Task<SongViewModel> Get(int id)
+        {
+           SongViewModel song = new SongViewModel();
+
+            using (var httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.GetAsync($"https://localhost:5001/api/songs/{id}"))
+                {
+                    string apiResponse =  await response.Content.ReadAsStringAsync();
+                    song = JsonConvert.DeserializeObject<SongViewModel>(apiResponse);
+                }
+            }
+
+            return song;
+        }
 
         [HttpGet]
         [Route("all")]
         public async Task<List<SongViewModel>> GetAll()
         {
-            Console.WriteLine("here");
             List<SongViewModel> songs = new List<SongViewModel>();
 
             using (var httpClient = new HttpClient())
             {
-                using (var response = await httpClient.GetAsync("https://localhost:5001/api/Songs/all"))
+                using (var response = await httpClient.GetAsync("https://localhost:5001/api/songs/all"))
                 {
-                    Console.WriteLine(response);
-
                     string apiResponse =  await response.Content.ReadAsStringAsync();
                     songs = JsonConvert.DeserializeObject<List<SongViewModel>>(apiResponse);
                 }

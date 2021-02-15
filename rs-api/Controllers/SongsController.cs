@@ -48,6 +48,7 @@ namespace Rockstar.Controllers
         }
 
         [HttpGet]
+        [Route("{id}")]
         public SongModel Get(int id)
         {
             return Songs.First(x => x.Id == id);
