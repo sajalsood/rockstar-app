@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rs-api", "rs-api\rs-api.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rs-react", "rs-react\rs-react.csproj", "{0112CEFA-7F23-4A4F-86FC-DE0C0E0D19E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rs-mvc", "rs-mvc\rs-mvc.csproj", "{B06DD4D4-6172-46B9-A6E5-259E76CE65E1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,5 +46,17 @@ Global
 		{0112CEFA-7F23-4A4F-86FC-DE0C0E0D19E2}.Release|x64.Build.0 = Release|Any CPU
 		{0112CEFA-7F23-4A4F-86FC-DE0C0E0D19E2}.Release|x86.ActiveCfg = Release|Any CPU
 		{0112CEFA-7F23-4A4F-86FC-DE0C0E0D19E2}.Release|x86.Build.0 = Release|Any CPU
+		{B06DD4D4-6172-46B9-A6E5-259E76CE65E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B06DD4D4-6172-46B9-A6E5-259E76CE65E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B06DD4D4-6172-46B9-A6E5-259E76CE65E1}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B06DD4D4-6172-46B9-A6E5-259E76CE65E1}.Debug|x64.Build.0 = Debug|Any CPU
+		{B06DD4D4-6172-46B9-A6E5-259E76CE65E1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B06DD4D4-6172-46B9-A6E5-259E76CE65E1}.Debug|x86.Build.0 = Debug|Any CPU
+		{B06DD4D4-6172-46B9-A6E5-259E76CE65E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B06DD4D4-6172-46B9-A6E5-259E76CE65E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B06DD4D4-6172-46B9-A6E5-259E76CE65E1}.Release|x64.ActiveCfg = Release|Any CPU
+		{B06DD4D4-6172-46B9-A6E5-259E76CE65E1}.Release|x64.Build.0 = Release|Any CPU
+		{B06DD4D4-6172-46B9-A6E5-259E76CE65E1}.Release|x86.ActiveCfg = Release|Any CPU
+		{B06DD4D4-6172-46B9-A6E5-259E76CE65E1}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -5,9 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using rs_mvc.Models;
+using Rockstar.Models;
 
-namespace rs_mvc.Controllers
+namespace Rockstar.Controllers
 {
     public class HomeController : Controller
     {

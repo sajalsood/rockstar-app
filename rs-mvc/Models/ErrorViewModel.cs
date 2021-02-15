@@ -1,6 +1,6 @@
 using System;
 
-namespace rs_mvc.Models
+namespace Rockstar.Models
 {
     public class ErrorViewModel
     {
