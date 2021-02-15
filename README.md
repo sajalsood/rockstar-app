@@ -2,7 +2,7 @@
 
 Web app application for a rockstar music library to show song lyrics for 3 songs.
 
-Install Newtonsoft.json
+Install Newtonsoft.json - dotnet add package Newtonsoft.Json
 
 dotnet run --urls="https://localhost:5002"
 

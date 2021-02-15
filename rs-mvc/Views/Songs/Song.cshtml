@@ -1,0 +1,16 @@
+@{
+    ViewData["Title"] = "Rockstar Music Library";
+}
+
+@Model SongViewModel
+
+<div class="m-10">
+    <div class="card m-2">
+        <img class="card-img-top card-img-pos" src="~/images/@(Model.ImageUrl)" alt="Card image"  />
+    </div>
+    <div class="text-center pt-5">
+        <h1 class="text-info text-center">@(Model.Name)</h1>
+        <div class="text-success m-3">@Html.Raw(Model.Lyrics)</div>
+        <h5 class="text-primary text-center">- @(Model.Artist)</h5>
+    </div>
+</div>

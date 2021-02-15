@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Rockstar Music Library";
+}
+
+@Model List<SongViewModel>
+
+<div className="mt-5">
+    <div class="card-deck text-center pt-5">
+        @foreach (SongViewModel item in Model)
+        {
+            <div class="card">
+                <img class="card-img-top" src="~/images/@(item.ImageUrl)" alt="Card image"  />
+                <div class="card-body">
+                    <h4 class="card-title text-primary">@item.Name</h4>
+                    <a asp-area="" asp-controller="Songs" asp-action="Song" asp-route-id="@item.Id" class="btn btn-success">See Lyrics</a>
+                </div>
+            </div>
+        }
+    </div>  
+</div>
+
+
+
+
+
