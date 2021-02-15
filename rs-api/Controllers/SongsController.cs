@@ -9,8 +9,8 @@ using Rockstar.Models;
 namespace Rockstar.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
-    public class SongController : ControllerBase
+    [Route("api/[controller]")]
+    public class SongsController : ControllerBase
     {
         private static readonly List<SongModel> Songs = new List<SongModel>()
         {
@@ -40,9 +40,9 @@ namespace Rockstar.Controllers
             }
         };
 
-        private readonly ILogger<SongController> _logger;
+        private readonly ILogger<SongsController> _logger;
 
-        public SongController(ILogger<SongController> logger)
+        public SongsController(ILogger<SongsController> logger)
         {
             _logger = logger;
         }
