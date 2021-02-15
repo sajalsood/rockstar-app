@@ -31,12 +31,15 @@ namespace Rockstar.Controllers
         [Route("all")]
         public async Task<List<SongViewModel>> GetAll()
         {
+            Console.WriteLine("here");
             List<SongViewModel> songs = new List<SongViewModel>();
 
             using (var httpClient = new HttpClient())
             {
-                using (var response = await httpClient.GetAsync("https://localhost:5001/api/songs/all"))
+                using (var response = await httpClient.GetAsync("https://localhost:5001/api/Songs/all"))
                 {
+                    Console.WriteLine(response);
+
                     string apiResponse =  await response.Content.ReadAsStringAsync();
                     songs = JsonConvert.DeserializeObject<List<SongViewModel>>(apiResponse);
                 }

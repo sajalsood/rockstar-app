@@ -55,9 +55,6 @@ namespace Rockstar.Controllers
 
         [HttpGet]
         [Route("all")]
-        public List<SongModel> GetAll()
-        {
-            return Songs;
-        }
+        public IEnumerable<SongModel> GetAll() => Songs;
     }
 }

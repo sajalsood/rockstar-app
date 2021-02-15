@@ -2,6 +2,10 @@
 
 Web app application for a rockstar music library to show song lyrics for 3 songs.
 
+Install Newtonsoft.json
+
+dotnet run --urls="https://localhost:5002"
+
 ## Author
 
 - Sajal Sood
