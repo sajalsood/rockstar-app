@@ -47,19 +47,27 @@ namespace Rockstar.Controllers
         {
            SongViewModel song = new SongViewModel();
 
-            using (var httpClient = new HttpClient())
+            try 
             {
-                using (var response = await httpClient.GetAsync(BASE_URL + id))
+                using (var httpClient = new HttpClient())
                 {
-                    string apiResponse =  await response.Content.ReadAsStringAsync();
-                    song = JsonConvert.DeserializeObject<SongViewModel>(apiResponse);
+                    using (var response = await httpClient.GetAsync(BASE_URL + id))
+                    {
+                        string apiResponse =  await response.Content.ReadAsStringAsync();
+                        song = JsonConvert.DeserializeObject<SongViewModel>(apiResponse);
+                    }
                 }
             }
-
+            catch(Exception ex) 
+            {
+                return View("Error", new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            }
+           
            return View(song);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        [Route("error")]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
