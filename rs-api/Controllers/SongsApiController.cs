@@ -9,7 +9,7 @@ using Rockstar.Models;
 namespace Rockstar.Controllers
 {
     [ApiController]
-    [Route("api/songs")]
+    
     public class SongsApiController : ControllerBase
     {
         private static readonly List<SongModel> Songs = new List<SongModel>()
@@ -48,13 +48,24 @@ namespace Rockstar.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<SongModel> Get() => Songs;
+        [Route("api/songs")]
+        public IActionResult Get() 
+        {
+            return Ok(Songs);
+        }
 
         [HttpGet]
-        [Route("{id}")]
-        public SongModel Get(int id)
+        [Route("api/songs/{id}")]
+        public IActionResult Get(int id)
         {
-            return Songs.First(x => x.Id == id);
+            SongModel song = Songs.FirstOrDefault(x => x.Id == id);
+
+            if(song == null) 
+            {
+                return StatusCode(404, "Not Found");
+            }
+
+            return Ok(song);
         }
     }
 }
