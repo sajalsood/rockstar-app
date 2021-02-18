@@ -12,8 +12,7 @@ using Newtonsoft.Json.Linq;
 namespace Rockstar.Controllers
 {
     [ApiController]
-    [Route("songs")]
-    public class SongsController : ControllerBase
+    public class SongsController : Controller
     {
         private static readonly string BASE_URL = "https://localhost:5001/api/songs/";
 
@@ -25,6 +24,7 @@ namespace Rockstar.Controllers
         }
        
         [HttpGet]
+        [Route("songs")]
         public async Task<List<SongViewModel>> Get()
         {
             List<SongViewModel> songs = new List<SongViewModel>();
@@ -42,7 +42,7 @@ namespace Rockstar.Controllers
         }
 
         [HttpGet]
-        [Route("{id}")]
+        [Route("/song/{id}")]
         public async Task<SongViewModel> Get(int id)
         {
            SongViewModel song = new SongViewModel();
@@ -57,6 +57,14 @@ namespace Rockstar.Controllers
             }
 
             return song;
+        }
+
+        
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        [Route("error")]
+        public IActionResult Error()
+        {
+            return View();
         }
 
     }

@@ -40,7 +40,7 @@ export class Song1 extends Component {
   }
 
   async populateSongData() {
-    const response = await fetch('songs/' + 1);
+    const response = await fetch('song/' + 1);
     const data = await response.json();
     this.setState({ song: data, loading: false });
   }
