@@ -1,10 +1,10 @@
 # Rockstar Music Library
 
-Web app application for a rockstar music library to show song lyrics for 3 songs.
+Web app application for a rockstar music library to show song lyrics for 3 songs. The project has three parts
 
-Install Newtonsoft.json - dotnet add package Newtonsoft.Json
-
-dotnet run --urls="https://localhost:5002"
+- Web API
+- MVC
+- React
 
 ## Author
 
@@ -14,23 +14,41 @@ dotnet run --urls="https://localhost:5002"
 
 ## Client (front-end)
 
+- [MVC](https://dotnet.microsoft.com/apps/aspnet/mvc)
 - [React](https://reactjs.org/docs/getting-started.html)
 
 ## Service (back-end)
 
-- [ASP.NET Core 5.0](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro)
+- [Web API](https://dotnet.microsoft.com/apps/aspnet/apis)
 
 ## How to run locally
 
 1. [Download and install the .NET Core SDK](https://dotnet.microsoft.com/download)
-2. Open a terminal such as **PowerShell**, **Command Prompt**, or **bash** and navigate to the `rockstar-react` folder where the `rockstar.csproj` is located.
-3. Run the following `dotnet` commands:
+2. Open a terminal such as **PowerShell**, **Command Prompt**, or **bash** and navigate to the `rs-api, rs-mvc, rs-react` folder where the `*.csproj` is located.
+3. Install the dependencies in each project
+    ```sh
+    Install Newtonsoft.json - dotnet add package Newtonsoft.Json
+    ```
+4. Run the following `dotnet` commands:
     ```sh
     dotnet dev-certs https --trust
     dotnet build
-    dotnet run
     ```
-4. Open your browser to: `https://localhost:5001`.
+5. - Web APi
+    ```sh
+    dotnet run --urls="https://localhost:5001"
+    ```
+
+    - MVC
+    ```sh
+    dotnet run --urls="https://localhost:5002"
+    ```
+
+    - React
+    ```sh
+    dotnet run --urls="https://localhost:5002"
+    ```
+5. Open your browser
 
 ## Folder Structure
 
@@ -57,7 +75,26 @@ ClientApp/
     logo.svg
 ```
 
-### Dotnet Backend
+### MVC Frontend
+
+```
+Controllers/
+  SongsController.cs
+Models/
+    SongViewModel.cs
+Views/
+    Songs/
+          Song.cshtml
+Properties
+.gitignore
+Program.cs
+Startup.cs
+appsettings.Development.json
+appsettings.json
+rockstar.csproj
+```
+
+### API Backend
 
 ```
 Controllers/
