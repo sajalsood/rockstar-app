@@ -41,7 +41,7 @@ namespace Rockstar
             
             app.UseCors();
 
-            app.UseStatusCodePagesWithReExecute("/Songs/Error");
+            app.UseStatusCodePagesWithReExecute("/error");
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();

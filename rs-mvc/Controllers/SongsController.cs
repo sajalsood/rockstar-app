@@ -12,7 +12,7 @@ using Rockstar.Models;
 namespace Rockstar.Controllers
 {
     [ApiController]
-    [Route("songs")]
+    [Route("")]
     public class SongsController : Controller
     {
         private static readonly string BASE_URL = "https://localhost:5001/api/songs/";
@@ -42,7 +42,7 @@ namespace Rockstar.Controllers
         }
 
         [HttpGet]
-        [Route("{id}")]
+        [Route("/song/{id}")]
         public async Task<IActionResult> Song(int id)
         {
            SongViewModel song = new SongViewModel();

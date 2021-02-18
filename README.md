@@ -46,7 +46,7 @@ Web app application for a rockstar music library to show song lyrics for 3 songs
 
     - React
     ```sh
-    dotnet run --urls="https://localhost:5002"
+    dotnet run --urls="https://localhost:5003"
     ```
 5. Open your browser
 
